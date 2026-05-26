@@ -1,112 +1,481 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Code Saga - Landing Page</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/landingGuest.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Code Saga - Landing Page</title>
+
+  <!-- Bootstrap -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="css/landingGuest.css">
+
+  <style>
+
+    body{
+      overflow-x:hidden;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+    .hero-title{
+      color:#A0EBA8;
+      text-shadow:
+        3px 3px 0 #fff,
+        -2px -2px 0 #fff;
+      line-height:1.1;
+    }
+
+    .hero-text{
+      color:white;
+      line-height:1.6;
+    }
+
+    .logo-img{
+      max-width:223px;
+    }
+
+    .mascot-img{
+      width:100%;
+      max-width:500px;
+      height:auto;
+    }
+
+    /* =========================
+       PIXEL BOX
+    ========================= */
+    .pixel-box{
+      min-height:800px;
+      padding:100px 50px 50px;
+    }
+
+    /* =========================
+       FEATURES
+    ========================= */
+    .feature-list li{
+      font-size:2rem;
+    }
+
+    .feature-list img{
+      width:100px;
+      height:100px;
+      border-radius:10px;
+      border:2px solid #000;
+      flex-shrink:0;
+    }
+
+    /* =========================
+       BOSS CARD
+    ========================= */
+    .boss-card{
+      width:100%;
+      max-width:550px;
+    }
+
+    .boss-card img{
+      width:100%;
+      max-width:320px;
+      height:auto;
+      border-radius:12px;
+      background:#4CAF50;
+    }
+
+    .boss-title{
+      color:#dc3545;
+      font-size:2.5rem;
+      line-height:1.4;
+    }
+
+    .boss-desc{
+      font-size:1.4rem;
+      line-height:1.6;
+    }
+
+    /* =========================
+       BOTTOM BANNER
+    ========================= */
+    .bottom-banner{
+      min-height:120px;
+      border-radius:40px;
+      border:4px solid #8b0000;
+      box-shadow:0 8px 0 #5a0000;
+      overflow:hidden;
+      padding:20px;
+    }
+
+    .bottom-banner h2{
+      font-size:3rem;
+      text-shadow:4px 4px 0 #8b0000;
+      z-index:1;
+      line-height:1.4;
+    }
+
+    .runner-img{
+      width:170px;
+      left:40px !important;
+      z-index:2;
+    }
+
+    .chest-img{
+      width:220px;
+      right:10px !important;
+      z-index:2;
+    }
+
+    /* =========================
+       TABLET
+    ========================= */
+    @media (max-width: 992px){
+
+      .hero-title{
+        font-size:4rem !important;
+        text-align:center;
+      }
+
+      .hero-text{
+        font-size:1.3rem !important;
+        text-align:center;
+      }
+
+      .pixel-btn{
+        font-size:1.2rem !important;
+      }
+
+      .pixel-box{
+        padding:90px 35px 40px !important;
+      }
+
+      /* STACK LAYOUT */
+      .feature-section{
+        flex-direction:column !important;
+      }
+
+      /* FEATURES */
+      .feature-list{
+        margin-top:30px;
+      }
+
+      .feature-list li{
+        font-size:1.3rem !important;
+      }
+
+      .feature-list img{
+        width:75px;
+        height:75px;
+      }
+
+      /* BOSS */
+      .boss-card{
+        margin-top:60px;
+      }
+
+      .boss-card img{
+        max-width:260px;
+      }
+
+      .boss-title{
+        font-size:1.8rem;
+      }
+
+      .boss-desc{
+        font-size:1.1rem;
+      }
+
+      /* BANNER */
+      .bottom-banner{
+        min-height:140px;
+      }
+
+      .bottom-banner h2{
+        font-size:1.8rem;
+        padding:0 80px;
+      }
+
+      .runner-img{
+        width:100px;
+        left:15px !important;
+      }
+
+      .chest-img{
+        width:120px;
+        right:-5px !important;
+      }
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+    @media (max-width: 768px){
+
+      .hero-title{
+        font-size:2.8rem !important;
+      }
+
+      .hero-text{
+        font-size:1rem !important;
+      }
+
+      .pixel-box{
+        padding:80px 20px 30px !important;
+      }
+
+      /* FEATURES */
+      .feature-list li{
+        flex-direction:column;
+        text-align:center;
+        font-size:1.1rem !important;
+      }
+
+      .feature-list img{
+        width:70px;
+        height:70px;
+      }
+
+      /* BOSS */
+      .boss-card img{
+        max-width:220px;
+      }
+
+      .boss-title{
+        font-size:1.5rem;
+      }
+
+      .boss-desc{
+        font-size:1rem;
+      }
+
+      /* BANNER */
+      .bottom-banner{
+        min-height:120px;
+      }
+
+      .bottom-banner h2{
+        font-size:1.2rem;
+        padding:0 50px;
+      }
+
+      .runner-img{
+        width:70px;
+        left:5px !important;
+      }
+
+      .chest-img{
+        width:90px;
+        right:-10px !important;
+      }
+    }
+
+  </style>
 </head>
+
 <body class="d-flex flex-column min-vh-100">
 
-    <div class="container py-4 flex-grow-1">
-        
-        <div class="row align-items-center mb-5 mt-3">
-            <div class="col-md-6 text-center text-md-start">
-                <img src="assets/images/logo.png" alt="Code Saga Logo" class="mb-3 img-fluid" style="max-width: 223px;">
-                
-                <h1 class="display-1 mb-1" style="color: #A0EBA8; text-shadow: 3px 3px 0 #fff, -2px -2px 0 #fff;">
-                    Start Your<br>Coding
-                </h1>
-                <p class="text-white fs-2 mb-4">
-                    Let's learn java programming through<br>
-                    fun quizzes, level up your skills and<br>
-                    become a <span class="text-danger fw-bold">CODE HERO!</span>
-                </p>
-                <button class="btn btn-danger btn-lg pixel-btn px-5 py-3 fs-3 fw-bold" id="loginBtn">
-                    Register / Login
-                </button>
-            </div>
-            <div class="col-md-6 text-center mt-4 mt-md-0">
-                <img src="assets/images/bunglon pixel.png" alt="Mascot" class="img-fluid" style="width: 500px; height: auto;">
-            </div>
-        </div>
+  <div class="container py-4 flex-grow-1">
 
-        <div class="row mt-5">
-            <div class="col-12">
-                <div class="pixel-box position-relative w-100" style="min-height: 800px; padding: 100px 50px 50px 50px;">
-                    
-                    <div class="text-center position-absolute top-0 start-50 translate-middle" 
-                        style="width: 100%; z-index: 10; pointer-events: none;"> <img src="assets/icons/banner.png" alt="Welcome" class="img-fluid" 
-                        style="width: 550px; height: auto; margin-top: -10px; pointer-events: auto;"> 
-                    </div>
+    <!-- HERO -->
+    <div class="row align-items-center mb-5 mt-3">
 
-                    <div class="row mt-4 align-items-center">
-                        <div class="col-md-6 pe-md-4 mb-5 mb-md-0">
-                            <ul class="list-unstyled d-flex flex-column gap-4 mb-0 text-dark fw-bold">
-                                <li class="d-flex align-items-center gap-3 fs-3">
-                                    <img src="assets/icons/gamepad.png" width="100" height="100" class="rounded border border-dark border-2" style="background-color: #b0d4d6;"> 
-                                    <span>Learn Java Through Fun Gamification</span>
-                                </li>
-                                <li class="d-flex align-items-center gap-3 fs-3">
-                                    <img src="assets/icons/trophy2.png" width="100" height="100" class="rounded border border-dark border-2" style="background-color: #f7d57c;"> 
-                                    <span>Unlock Achievements & Reward</span>
-                                </li>
-                                <li class="d-flex align-items-center gap-3 fs-3">
-                                    <img src="assets/icons/xp.png" width="100" height="100" class="rounded border border-dark border-2" style="background-color: #92c98b;"> 
-                                    <span>Track Your Progress with XP & Levels</span>
-                                </li>
-                                <li class="d-flex align-items-center gap-3 fs-3">
-                                    <img src="assets/icons/book.png" width="100" height="100" class="rounded border border-dark border-2" style="background-color: #a7cdeb;"> 
-                                    <span>Beginner-Friendly Java Learning Path</span>
-                                </li>
-                                <li class="d-flex align-items-center gap-3 fs-3">
-                                    <img src="assets/icons/question.png" width="100" height="100" class="rounded border border-dark border-2" style="background-color: #c9a4e8;"> 
-                                    <span>Interactive Quizzes Challenges</span>
-                                </li>
-                                <li class="d-flex align-items-center gap-3 fs-3">
-                                    <img src="assets/icons/hearth.png" width="100" height="100" class="rounded border border-dark border-2" style="background-color: #f49b9b;"> 
-                                    <span>Stay Motivated</span>
-                                </li>
-                            </ul>
-                        </div>
-                        
-                        <div class="col-md-6 ps-md-4 d-flex justify-content-center" style="width: 100px; margin-left: 350px;">
-                            <div class="boss-card d-flex flex-column align-items-center text-center">
-                                <img src="assets/icons/boss_landingguest.png" alt="Boss" class="img-fluid border border-dark border-2 mb-3" style="max-width: 320px; border-radius: 12px; background-color: #4CAF50;">
-                                <h3 class="text-danger fw-bold mb-2" style="font-size: 2.5rem;">A BOSS IS BLOCKING YOUR PATH!</h3>
-                                <p class="mb-0 fs-4 text-dark fw-bold">Prove your skills, defeat the boss and earn epic achievements!</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+      <!-- LEFT -->
+      <div class="col-lg-6 text-center text-lg-start">
 
-        <div class="row mt-5 mb-5">
-            <div class="col-12">
-                <div class="bottom-banner bg-danger text-white w-100 position-relative d-flex justify-content-center align-items-center" 
-                    style="height: 120px; border-radius: 40px; border: 4px solid #8b0000; box-shadow: 0 8px 0 #5a0000;">
-                    
-                    <img src="assets/icons/herorun.png" alt="Runner" 
-                        class="position-absolute start-0 translate-middle-y" 
-                        style="width: 170px; height: auto; top: 40%; left: 40px !important; z-index: 2;">
+        <img
+          src="assets/images/logo.png"
+          alt="Code Saga Logo"
+          class="img-fluid mb-3 logo-img"
+        >
 
-                    <h2 class="mb-0 text-center" 
-                        style="font-family: 'Jersey 25', sans-serif; font-size: 3.5rem; text-shadow: 4px 4px 0px #8b0000; z-index: 1;">
-                        Start your saga and get achievements!
-                    </h2>
+        <h1 class="display-1 hero-title mb-3">
+          Start Your<br> Coding
+        </h1>
 
-                    <img src="assets/icons/chestfooter.png" alt="Chest" 
-                        class="position-absolute end-0 translate-middle-y" 
-                        style="width: 250px; height: 250px; top: 10%; right: 10px !important; z-index: 2;">
-                </div>
-            </div>
-        </div>
+        <p class="hero-text fs-2 mb-4">
+          Let's learn java programming through fun quizzes,
+          level up your skills and become a
+          <span class="text-danger fw-bold">
+            CODE HERO!
+          </span>
+        </p>
+
+        <button
+          class="btn btn-danger btn-lg pixel-btn px-5 py-3 fs-3 fw-bold"
+          id="loginBtn"
+        >
+          Register / Login
+        </button>
+
+      </div>
+
+      <!-- RIGHT -->
+      <div class="col-lg-6 text-center mt-5 mt-lg-0">
+
+        <img
+          src="assets/images/bunglon pixel.png"
+          alt="Mascot"
+          class="img-fluid mascot-img"
+        >
+
+      </div>
 
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/pages/landingGuest.js"></script>
+    <!-- FEATURES -->
+    <div class="row mt-5">
+
+      <div class="col-12">
+
+        <div class="pixel-box position-relative w-100">
+
+          <!-- TOP BANNER -->
+          <div
+            class="text-center position-absolute top-0 start-50 translate-middle"
+            style="width:100%; z-index:10;"
+          >
+
+            <img
+              src="assets/icons/banner.png"
+              alt="Welcome"
+              class="img-fluid"
+              style="max-width:550px; width:90%;"
+            >
+
+          </div>
+
+          <!-- CONTENT -->
+          <div class="row mt-4 align-items-center feature-section">
+
+            <!-- LEFT FEATURES -->
+            <div class="col-12 col-lg-6 pe-lg-4 mb-5 mb-lg-0">
+
+              <ul class="list-unstyled d-flex flex-column gap-4 mb-0 text-dark fw-bold feature-list">
+
+                <li class="d-flex align-items-center gap-3">
+                  <img
+                    src="assets/icons/gamepad.png"
+                    style="background-color:#b0d4d6;"
+                  >
+                  <span>Learn Java Through Fun Gamification</span>
+                </li>
+
+                <li class="d-flex align-items-center gap-3">
+                  <img
+                    src="assets/icons/trophy2.png"
+                    style="background-color:#f7d57c;"
+                  >
+                  <span>Unlock Achievements & Reward</span>
+                </li>
+
+                <li class="d-flex align-items-center gap-3">
+                  <img
+                    src="assets/icons/xp.png"
+                    style="background-color:#92c98b;"
+                  >
+                  <span>Track Your Progress with XP & Levels</span>
+                </li>
+
+                <li class="d-flex align-items-center gap-3">
+                  <img
+                    src="assets/icons/book.png"
+                    style="background-color:#a7cdeb;"
+                  >
+                  <span>Beginner-Friendly Java Learning Path</span>
+                </li>
+
+                <li class="d-flex align-items-center gap-3">
+                  <img
+                    src="assets/icons/question.png"
+                    style="background-color:#c9a4e8;"
+                  >
+                  <span>Interactive Quizzes Challenges</span>
+                </li>
+
+                <li class="d-flex align-items-center gap-3">
+                  <img
+                    src="assets/icons/hearth.png"
+                    style="background-color:#f49b9b;"
+                  >
+                  <span>Stay Motivated</span>
+                </li>
+
+              </ul>
+
+            </div>
+
+            <!-- RIGHT BOSS -->
+            <div class="col-12 col-lg-6 d-flex justify-content-center">
+
+              <div class="boss-card d-flex flex-column align-items-center text-center">
+
+                <img
+                  src="assets/icons/boss_landingguest.png"
+                  alt="Boss"
+                  class="img-fluid border border-dark border-2 mb-3"
+                >
+
+                <h3 class="fw-bold mb-2 boss-title">
+                  A BOSS IS BLOCKING YOUR PATH!
+                </h3>
+
+                <p class="mb-0 text-dark fw-bold boss-desc">
+                  Prove your skills, defeat the boss and earn epic achievements!
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- BOTTOM BANNER -->
+    <div class="row mt-5 mb-5">
+
+      <div class="col-12">
+
+        <div class="bottom-banner bg-danger text-white position-relative d-flex justify-content-center align-items-center">
+
+          <!-- LEFT -->
+          <img
+            src="assets/icons/herorun.png"
+            alt="Runner"
+            class="position-absolute translate-middle-y runner-img"
+          >
+
+          <!-- TEXT -->
+          <h2 class="mb-0 text-center">
+            Start your saga and get achievements!
+          </h2>
+
+          <!-- RIGHT -->
+          <img
+            src="assets/icons/chestfooter.png"
+            alt="Chest"
+            class="position-absolute translate-middle-y chest-img"
+          >
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- JS -->
+  <script src="js/pages/landingGuest.js"></script>
+
 </body>
 </html>

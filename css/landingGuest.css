@@ -67,3 +67,89 @@ h1, h2, h3, p, span, li {
     transform: translateY(5px);
     box-shadow: 0 0px 0 #8b0000;
 }
+
+/* =========================
+   TABLET
+========================= */
+@media (max-width: 992px){
+
+  .hero-title{
+    font-size:4rem !important;
+    text-align:center;
+  }
+
+  .hero-text{
+    font-size:1.3rem !important;
+    text-align:center;
+    line-height:1.6;
+  }
+
+  .pixel-btn{
+    font-size:1.2rem !important;
+  }
+
+  /* FEATURE LIST */
+  .feature-list{
+    margin-top:40px;
+  }
+
+  .feature-list li{
+    font-size:1.3rem !important;
+    align-items:center;
+  }
+
+  .feature-list img{
+    width:75px;
+    height:75px;
+    flex-shrink:0;
+  }
+
+  /* BOSS */
+  .boss-card{
+    margin-top:60px;
+    max-width:500px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  .boss-card img{
+    max-width:260px;
+  }
+
+  .boss-title{
+    font-size:1.8rem;
+    line-height:1.4;
+  }
+
+  .boss-desc{
+    font-size:1.1rem;
+    line-height:1.6;
+  }
+
+  /* PIXEL BOX */
+  .pixel-box{
+    padding:90px 35px 40px !important;
+  }
+
+  /* BOTTOM BANNER */
+  .bottom-banner{
+    min-height:140px;
+    padding:20px 30px;
+  }
+
+  .bottom-banner h2{
+    font-size:1.8rem;
+    padding:0 80px;
+    line-height:1.5;
+  }
+
+  .runner-img{
+    width:100px;
+    left:15px !important;
+  }
+
+  .chest-img{
+    width:120px;
+    right:-5px !important;
+  }
+}
